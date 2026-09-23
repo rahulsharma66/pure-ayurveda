@@ -21,6 +21,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Vercel
+.vercel/
+
 # Vite / React
 .vite/
 vite.config.js.history

@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "ayurveda-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "dinkar-admin/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "dinkar-backend/app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/admin/assets/(.*)", "dest": "/dinkar-admin/assets/$1" },
+    { "src": "/admin/(.*)", "dest": "/dinkar-admin/index.html" },
+    { "src": "/assets/(.*)", "dest": "/ayurveda-frontend/assets/$1" },
+    { "src": "/api/(.*)", "dest": "/dinkar-backend/app.js" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/ayurveda-frontend/index.html" }
+  ]
+}
