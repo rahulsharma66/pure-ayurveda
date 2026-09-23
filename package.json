@@ -1,0 +1,14 @@
+{
+  "name": "pure-ayurveda",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend,admin -c blue,green,magenta \"npm --prefix dinkar-backend run dev\" \"npm --prefix ayurveda-frontend run dev\" \"npm --prefix dinkar-admin run dev\"",
+    "dev:backend": "npm --prefix dinkar-backend run dev",
+    "dev:frontend": "npm --prefix ayurveda-frontend run dev",
+    "dev:admin": "npm --prefix dinkar-admin run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
